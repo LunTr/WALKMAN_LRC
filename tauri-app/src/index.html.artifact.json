@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "tauri-app/src/index.html",
+  "entry": "tauri-app/src/index.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-07-02T13:09:59.368Z",
+  "updatedAt": "2026-07-02T13:09:59.368Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

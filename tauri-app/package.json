@@ -1,0 +1,18 @@
+{
+  "name": "lrc-proc-tauri",
+  "version": "1.0.0",
+  "description": "LRC 歌词时间戳修正工具 — 原生桌面应用",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./node_modules/@tauri-apps/cli/tauri.js dev",
+    "build": "node ./node_modules/@tauri-apps/cli/tauri.js build",
+    "tauri": "node ./node_modules/@tauri-apps/cli/tauri.js"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.1",
+    "@tauri-apps/cli-win32-x64-msvc": "^2.11.1"
+  }
+}
