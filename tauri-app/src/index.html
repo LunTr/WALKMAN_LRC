@@ -120,7 +120,7 @@ body::after {
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  padding-bottom: 20px;
+  padding-bottom: 12px;
 }
 
 .hdr-title-group { flex: 1; }
@@ -223,16 +223,17 @@ body::after {
 
 .hdr-stats {
   display: flex;
+  align-items: stretch;
   gap: 0;
-  padding: 18px 0 22px;
-  margin-top: 20px;
+  padding: 10px 0 14px;
+  margin-top: 10px;
 }
 
 .stat {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
-  padding: 0 32px;
+  padding: 6px 32px;
   border-right: 2px solid var(--rule);
 }
 .stat:first-child { padding-left: 0; }
@@ -243,12 +244,6 @@ body::after {
    red accent budget. */
 .stat-alert {
   background: var(--sand-ghost);
-  border-left: 4px solid var(--sand);
-  padding-left: 20px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  align-self: stretch;
-  align-items: center;
 }
 
 .stat-num {
@@ -865,14 +860,14 @@ body::after {
 
 /* ══ RESPONSIVE ══════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .hdr { padding: 24px 24px 0; }
-  .hdr-title { font-size: 48px; }
-  .hdr-top { flex-wrap: wrap; gap: 16px; }
-  .hdr-meta { padding-bottom: 12px; }
+  .hdr { padding: 18px 24px 0; }
+  .hdr-title { font-size: 44px; }
+  .hdr-top { flex-wrap: wrap; gap: 10px; padding-bottom: 0; }
+  .hdr-meta { padding-bottom: 0; }
   .main { padding: 20px 24px 92px; }
   .file-grid { grid-template-columns: 1fr; }
-  .hdr-stats { gap: 0; }
-  .stat { padding: 4px 20px; }
+  .hdr-stats { gap: 0; align-items: stretch; margin-top: 12px; padding: 8px 0 10px; }
+  .stat { padding: 8px 20px; flex: 1; }
   .stat:first-child { padding-left: 0; }
 
   /* Toolbar reflows to two comfortable rows: filters on top, select
@@ -887,11 +882,33 @@ body::after {
   .tb-filters { width: 100%; border-bottom: 2px solid var(--rule); }
   .tb-filter { flex: 1; padding: 12px 8px; font-size: 11px; border-right: 2px solid var(--rule); }
   .tb-filter:last-child { border-right: none; }
+
+  /* Select row mirrors the filter row: full-width equal cells with a
+     full-height divider and a closing bottom rule, so the two rows read
+     as one continuous constructivist grid instead of floating buttons. */
   .tb-select {
     width: 100%;
-    padding: 12px 0;
+    gap: 0;
+    padding: 0;
     border-right: none;
-    justify-content: flex-start;
+    border-bottom: 2px solid var(--rule);
+  }
+  .tb-select .tool-btn {
+    flex: 1;
+    height: 46px;
+    padding: 0;
+    justify-content: center;
+    border: none;
+    border-right: 2px solid var(--rule);
+    background: var(--sand);
+    color: var(--ink);
+    letter-spacing: 0.14em;
+  }
+  .tb-select .tool-btn:last-child { border-right: none; }
+  .tb-select .tool-btn:hover:not(:disabled) {
+    background: var(--sand-dk);
+    transform: none;
+    box-shadow: none;
   }
   .tb-spacer { display: none; }
   .tb-process { display: none; }
