@@ -15,7 +15,7 @@ import (
 
 // ─── LRC processing logic (port of lrcread.py) ───────────────────────
 
-var timePattern    = regexp.MustCompile(`\d{2}:\d{2}\.\d{2}`)
+var timePattern = regexp.MustCompile(`\d{2}:\d{2}\.\d{2}`)
 var fullMillisPattern = regexp.MustCompile(`\[\d{2}:\d{2}\.\d{3}`)
 
 func parseTime(t string) (float64, bool) {
@@ -65,6 +65,10 @@ func processLRC(content string) (string, error) {
 }
 
 func processFile(filepath string) (string, error) {
+	if err := ensureLRCFileUTF8(filepath); err != nil {
+		return "", err
+	}
+
 	data, err := os.ReadFile(filepath)
 	if err != nil {
 		return "", fmt.Errorf("无法读取文件: %v", err)
